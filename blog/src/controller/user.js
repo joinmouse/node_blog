@@ -1,8 +1,12 @@
+const { execSql } = require('../db/mysql') 
+
 const loginCheck = (username, password) => {
-    if(username === 'join' && password === 'key') {
-        return true
-    }
-    return false
+    const sql = `
+        select username, realname from users where username='${username}' and password='${password}'
+    `
+    return execSql(sql).then(rows => {
+        return rows[0] || {}
+    })
 }
 
 module.exports = {
