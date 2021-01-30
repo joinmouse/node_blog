@@ -6,14 +6,15 @@ redisClient.on('error', err => {
     console.error(err)
 })
 
-//2、测试
-redisClient.set('myname', 'joinmouse', redis.print)
-redisClient.get('myname', (err, val) => {
+//2、使用: get、set
+redisClient.set('name', 'joinmouse', redis.print)
+
+redisClient.get('name', (err, val) => {
     if(err) {
         console.log(err)
         return
     }
     console.log('val: ' + val)
-
+    
     redisClient.quit()
 })
