@@ -16,3 +16,10 @@
 | 更新一篇博客 | /api/blog/update | post | id | |
 | 删除一篇博客 | /api/blog/delete | post | id | |
 | 登录 | /api/blog/login | post | | |
+
+#### 代码结构
+
+- http-test http请求基础
+- blog 使用原生JS实现一个blog的接口
+- blog_express 使用框架express实现blog的接口
+- mysql/redis-test mysql和redis链接数据库示例
